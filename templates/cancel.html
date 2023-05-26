@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Registration</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        h2 {
+            color: #666666;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        form {
+            width: 350px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #98e270;
+            border: none;
+            color: #3e7022;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #74ba4b;
+        }
+
+        a {
+            color: #3e7022;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cancel Registration</h1>
+    {% if message %}
+        <p class="error">{{ message }}</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('cancel') }}">
+        <label for="candidate_id">Candidate Name</label>
+        <input type="text" id="candidate_name" name="candidate_name" required>
+        <br>
+        <input type="submit" value="Cancel Registration">
+    </form>
+    <br>
+    <br>
+    <a href="{{ url_for('admin') }}">Back to Admin Panel</a>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='profile.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        
+        h1 {
+            color: #3e7022;
+        }
+        
+        .profile-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        
+        .profile-info p {
+            margin: 10px 0;
+        }
+        
+        a.btn {
+            background-color: #98e270;
+            border: 1px solid #3e7022;
+            color: #3e7022;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        a.btn:hover {
+            background-color: #3e7022;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-info">
+        <h1>User Profile</h1>
+        <p>Voter ID: {{ user.voter_id }}</p>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Age: {{ user.age }}</p>
+        <a href="{{ url_for('dashboard') }}" class="btn">Dashboard</a>
+    </div>
+</body>
+</html>

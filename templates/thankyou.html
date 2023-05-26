@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        a {
+            background-color: #3e7022;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #549933;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank You for Voting!</h1>
+    <a href="{{ url_for('results') }}">View results</a>
+    <a href="{{ url_for('index') }}">Home page</a>
+</body>
+</html>
