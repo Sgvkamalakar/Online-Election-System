@@ -2,14 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import mysql.connector
 
 app = Flask(__name__)
-app.secret_key = '9ae52ad014c879078f798507be8ac651'  # Set your secret key here
+app.secret_key = '# Set your secret key here'
 
 # Connect to the MySQL database
 db = mysql.connector.connect(
     host='localhost',
-    user='root',
-    password='vinay',
-    database='election_system'
+    user='your_user',
+    password='your_psssword',
+    database='your_db'
 )
 
 # Route for the home page
